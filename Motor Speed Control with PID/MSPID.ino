@@ -15,7 +15,7 @@ LCD Initialisation
 
 LiquidCrystal lcd(12, 11, 7, 6, 5, 4);
 double R, S, out_n, t1, t2, T, uc, error;
-const double kp = 100;
+const double kp = 115;
 const double ki = 100 / 5.45;
 const double kd = 100 * 0.039;
 const double SaturationMax = 255;
