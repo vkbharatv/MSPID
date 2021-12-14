@@ -1,7 +1,9 @@
 #include <LiquidCrystal.h>
 #include "PID.h"
 
-/*	LCD Initialisation
+/*
+
+LCD Initialisation
 	For more detail Please follow the Arduino exmaple
 	This project will required L293D driver with encoder motor. Connections are,
 	1. Motor input-Output at 3 and 4 respectively
@@ -11,29 +13,30 @@
 	5. Setpoint is received with an potentiometer connected at Anaogue Input A0.
 */
 
-
 LiquidCrystal lcd(12, 11, 7, 6, 5, 4);
 double R, S, out_n, t1, t2, T, uc, error;
-double kp = 1;
-double ki = 0.2;
-double kd = 0.00;
-double SaturationMax = 255;
-double SaturationMin = -255;
-/* 
+const double kp = 100;
+const double ki = 100 / 5.45;
+const double kd = 100 * 0.039;
+const double SaturationMax = 255;
+const double SaturationMin = -255;
+
+/*
 	PID opbject from the PID header file
-	The given PID controller supports the anti-windup for better performance 
+	The given PID controller supports the anti-windup for better performance
 */
 
 PID pid = PID(kp, ki, kd, SaturationMax, SaturationMin);
 
 /*Arduino Setup and Loop*/
+
 void setup() {
 	pinMode(2, INPUT);
 	pinMode(3, INPUT);
 	pinMode(13, OUTPUT);
 	lcd.begin(16, 4); //Using 16*4 LCD
 	analogWrite(10, 10); // Start Motor 
-	//Serial.begin(9600);
+	Serial.begin(9600);
 }
 
 void loop() {
@@ -58,7 +61,7 @@ void loop() {
 	}
 	error = pid.error;
 	updateLCD();
-	//updateSerial();
+	updateSerial();
 }
 
 void updateLCD() {
@@ -78,4 +81,5 @@ void updateLCD() {
 
 void updateSerial() {
 	Serial.println(S);
+	Serial.println(pid.T_e);
 }

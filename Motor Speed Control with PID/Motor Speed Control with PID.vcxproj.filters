@@ -24,12 +24,12 @@
     <ClInclude Include="__vm\.Motor Speed Control with PID.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\ArduinoVs\Blink1\Blink1\PID.h">
+    <ClInclude Include="..\..\..\..\..\OneDrive - LNMIIT\Documents\CODEZone\MyHeader\PID.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\ArduinoVs\Blink1\Blink1\PID.cpp">
+    <ClCompile Include="..\..\..\..\..\OneDrive - LNMIIT\Documents\CODEZone\MyHeader\PID.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
