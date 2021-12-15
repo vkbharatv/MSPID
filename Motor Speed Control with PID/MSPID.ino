@@ -2,7 +2,6 @@
 #include "PID.h"
 
 /*
-
 LCD Initialisation
 	For more detail Please follow the Arduino exmaple
 	This project will required L293D driver with encoder motor. Connections are,
