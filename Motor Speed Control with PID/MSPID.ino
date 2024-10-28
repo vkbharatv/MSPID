@@ -13,6 +13,7 @@ LCD Initialisation
 	3. Motor is controlled through IN1 and IN2 for clock wise and anti-clock wise rotations.
 	4. IN1 and IN2 is connected to the Arduino PIN 9 and 10.
 	5. Setpoint is received with an potentiometer connected at Anaogue Input A0.
+	updateLCD() and updateSerial() are used to update the LCD and Serial Monitor respectively.
 */
 
 LiquidCrystal lcd(12, 11, 7, 6, 5, 4);
